@@ -201,3 +201,30 @@
 
 // person2.compareAge(person3); // Svetlana is older than Irina
 // person3.compareAge(person1); // Irina is younger than Maxim
+class Dictionary {
+	constructor(name) {
+		this.name = name;
+		this.words = {};
+
+		this.add = function (word, description) {
+			this.words.word = word;
+			this.words.description = description;
+		};
+		this.remove = function (key) {
+			delete this.words[key];
+		};
+		this.get = function (key) {
+			return this.words[key];
+		};
+		this.showAllWords = function () {
+			console.log(`${this.words.word} - ${this.words.description}`);
+		};
+	}
+}
+
+const dictionary = new Dictionary('Толковый словарь');
+dictionary.add('JavaScript', 'is popular');
+
+dictionary.remove('JavaScript');
+dictionary.showAllWords();
+console.log(dictionary.words);
